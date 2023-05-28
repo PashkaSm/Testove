@@ -34,7 +34,8 @@ body {
 a {
     color: $white_color;
     text-decoration: none;
-    &:focus{
+
+    &:focus {
         outline: none;
     }
 }
@@ -46,16 +47,19 @@ li {
 .container {
     width: 1200px;
     max-width: 94%;
-    display: flex;
-    justify-content: center;
     position: relative;
 }
 
 .swiper {
-    height: 100vh;
+    height: 720px;
     width: 100vw;
     color: black;
     border-bottom: $blue_color 10px solid;
+}
+
+.swiper-pagination-bullet {
+    background: #fff;
+    opacity: 1;
 }
 
 .swiper-slide {
@@ -69,6 +73,7 @@ li {
         line-height: 70px;
         margin-bottom: 25px;
         text-transform: uppercase;
+        font-weight: 500;
     }
 
     .title {
@@ -116,14 +121,10 @@ header {
     .logo {
         display: flex;
         align-items: center;
-
-        &__text {
-            margin-left: 10px;
-            text-transform: uppercase;
-            font-size: 28px;
-            font-weight: 700;
-            color: $white_color;
-            cursor: pointer;
+        cursor: pointer;
+        transition: all .4s ease-in-out;
+        &:hover {
+            opacity: .7;
         }
     }
 
@@ -211,8 +212,8 @@ header {
     background-size: cover;
 
     .container {
-        display: flex;
-        flex-direction: column;
+
+        padding: 170px 0;
     }
 }
 
@@ -247,7 +248,13 @@ header {
             &__link {
                 text-decoration: underline;
                 color: $blue_color;
+                transition: all 0.5s ease-in-out;
+
+                &:hover {
+                    color: $gray_color;
+                }
             }
+
         }
 
         &__list {
@@ -318,7 +325,8 @@ header {
             @include center_item();
             opacity: 1;
             transition: opacity 0.3s ease-in-out;
-            &:hover{
+
+            &:hover {
                 opacity: .7;
             }
         }
@@ -468,8 +476,9 @@ footer {
     justify-content: space-between;
     align-items: center;
     padding: 40px 0 30px;
-    hr{
-        
+
+    hr {
+
         top: 10px;
         position: absolute;
         width: 100vw;
@@ -477,6 +486,7 @@ footer {
         transform: translate(-50%, 0);
         border: 2px solid #1dacbd;
     }
+
     .text1 {
         font-size: 14px;
         font-weight: 400;
@@ -488,11 +498,12 @@ footer {
             color: $blue_color;
             transition: all 0.5s ease-in-out;
             cursor: pointer;
+
+            &:hover {
+                color: $gray_color;
+            }
         }
 
-        &__link:hover {
-            color: $gray_color;
-        }
     }
 
     .text2 {
@@ -503,7 +514,27 @@ footer {
     }
 }
 
-@media (max-width:1023px) {
+@media (max-width:1046px) {
+    .swiper {
+        height: 600px;
+    }
+
+    .swiper-slide {
+        .title_italic {
+            font-size: 110px;
+            margin-bottom: 44px;
+        }
+
+        .title {
+            font-size: 65px;
+            line-height: 0;
+        }
+
+        .main_text {
+            margin-bottom: 130px;
+        }
+    }
+
     header {
         ul {
             li:not(:last-child) {
@@ -529,7 +560,8 @@ footer {
             align-items: flex-start;
             z-index: 1;
             margin: 0 50%;
-            transform: translate(-50%,0);
+            transform: translate(-50%, 0);
+
             ul {
                 flex-direction: column;
 
@@ -541,7 +573,7 @@ footer {
                         content: "";
                         position: absolute;
                         top: 45px;
-                        
+
                         height: 2px;
                         width: 20px;
                         background-color: $white_color;
@@ -571,6 +603,10 @@ footer {
 }
 
 @media(max-width:767px) {
+    .swiper {
+        height: 500px;
+    }
+
     header {
         .logo {
             img {
@@ -590,6 +626,11 @@ footer {
     .swiper-slide {
         .title_italic {
             font-size: 90px;
+            margin-bottom: 30px;
+        }
+
+        .main_text {
+            margin-bottom: 50px;
         }
 
         .title {
@@ -614,7 +655,8 @@ footer {
     .about_us {
         padding: 30px 0;
         flex-direction: column;
-        .video{
+
+        .video {
             margin-top: 40px;
         }
     }
@@ -625,7 +667,8 @@ footer {
 
         .text1 {
             margin-bottom: 20px;
-            br{
+
+            br {
                 display: none;
             }
         }

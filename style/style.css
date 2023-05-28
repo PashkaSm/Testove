@@ -37,20 +37,19 @@ li {
 .container {
   width: 1200px;
   max-width: 94%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   position: relative;
 }
 
 .swiper {
-  height: 100vh;
+  height: 720px;
   width: 100vw;
   color: black;
   border-bottom: #26c6da 10px solid;
+}
+
+.swiper-pagination-bullet {
+  background: #fff;
+  opacity: 1;
 }
 
 .swiper-slide {
@@ -69,6 +68,7 @@ li {
   line-height: 70px;
   margin-bottom: 25px;
   text-transform: uppercase;
+  font-weight: 500;
 }
 
 .swiper-slide .title {
@@ -125,15 +125,13 @@ header .logo {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  cursor: pointer;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
 }
 
-header .logo__text {
-  margin-left: 10px;
-  text-transform: uppercase;
-  font-size: 28px;
-  font-weight: 700;
-  color: #eee;
-  cursor: pointer;
+header .logo:hover {
+  opacity: .7;
 }
 
 header nav {
@@ -233,13 +231,7 @@ header ul li:hover:after {
 }
 
 .swiper-slide .container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  padding: 170px 0;
 }
 
 .about_us {
@@ -285,6 +277,12 @@ header ul li:hover:after {
 .about_us .about__text__link {
   text-decoration: underline;
   color: #26c6da;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.about_us .about__text__link:hover {
+  color: #363636;
 }
 
 .about_us .about__list {
@@ -598,7 +596,21 @@ footer .text2 {
   line-height: 22px;
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1046px) {
+  .swiper {
+    height: 600px;
+  }
+  .swiper-slide .title_italic {
+    font-size: 110px;
+    margin-bottom: 44px;
+  }
+  .swiper-slide .title {
+    font-size: 65px;
+    line-height: 0;
+  }
+  .swiper-slide .main_text {
+    margin-bottom: 130px;
+  }
   header ul li:not(:last-child) {
     margin-right: 15px;
   }
@@ -668,6 +680,9 @@ footer .text2 {
 }
 
 @media (max-width: 767px) {
+  .swiper {
+    height: 500px;
+  }
   header .logo img {
     width: 250px;
   }
@@ -679,6 +694,10 @@ footer .text2 {
   }
   .swiper-slide .title_italic {
     font-size: 90px;
+    margin-bottom: 30px;
+  }
+  .swiper-slide .main_text {
+    margin-bottom: 50px;
   }
   .swiper-slide .title {
     font-size: 45px;
