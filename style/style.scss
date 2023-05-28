@@ -34,6 +34,9 @@ body {
 a {
     color: $white_color;
     text-decoration: none;
+    &:focus{
+        outline: none;
+    }
 }
 
 li {
@@ -312,7 +315,12 @@ header {
             background-repeat: no-repeat;
             background-size: cover;
             cursor: pointer;
-            @include center_item()
+            @include center_item();
+            opacity: 1;
+            transition: opacity 0.3s ease-in-out;
+            &:hover{
+                opacity: .7;
+            }
         }
 
         &__container {
@@ -360,7 +368,7 @@ header {
         position: absolute;
         width: 100%;
         height: 100%;
-        background: url("/src/img/img1.png");
+        background: url("src/img/img1.png");
         background-size: cover;
         background-attachment: fixed;
         background-repeat: no-repeat;
@@ -394,7 +402,9 @@ header {
         margin-top: 100px;
 
         &__card {
-            @include center_item();
+            display: flex;
+            justify-content: start;
+            align-items: center;
             flex-direction: column;
             flex: 30%;
             background-color: #f6f8fa;
@@ -598,6 +608,7 @@ footer {
 
     .our_services__cards__card {
         flex: calc(95%);
+        padding: 25px 40px 40px;
     }
 
     .about_us {
@@ -614,6 +625,9 @@ footer {
 
         .text1 {
             margin-bottom: 20px;
+            br{
+                display: none;
+            }
         }
     }
 }
